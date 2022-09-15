@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 20:24:20 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/15 13:12:57 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 13:58:25 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,8 @@ int	ft_treat_hex(va_list *args, t_flags *flags)
 	if (flags->minus == 1)
 		flags->zero = 0;
 	number = ft_manage_u_mods(args, flags);
-	str = ft_itoa_uns(number, 16, flags);
+	flags->base = 16;
+	str = ft_itoa_uns(number, flags);
 	str = ft_manage_hex_str(flags, str, number);
 	ft_putstr(str);
 	char_count = ft_strlen(str);

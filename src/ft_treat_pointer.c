@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 20:24:20 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/15 12:21:54 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 14:02:22 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,8 @@ int	ft_treat_pointer(va_list *args, t_flags *flags)
 
 	char_count = 0;
 	number = va_arg(*args, void *);
-	str = ft_itoa_uns((unsigned long long)number, 16, flags);
+	flags->base = 16;
+	str = ft_itoa_uns((unsigned long long)number, flags);
 	str = ft_manage_ptr_str(flags, str);
 	ft_putstr(str);
 	char_count = ft_strlen(str);
