@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:07:28 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/15 14:08:55 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 15:49:03 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int					form_spec(int c);
 int					is_flag(int c);
 int					ft_treatment(va_list *args, t_flags *flags);
 int					ft_treat_width(int width, int minus, int has_zero);
-int					ft_putstrprec(char *str, int prec);
 int					ft_treat_char(va_list *args, t_flags *flags);
 int					ft_treat_string(va_list *args, t_flags *flags);
 int					ft_treat_int(va_list *args, t_flags *flags);
@@ -53,9 +52,7 @@ int					ft_treat_pointer(va_list *args, t_flags *flags);
 int					ft_check_mods(int c);
 int					ft_strlen2(const char *str);
 int					ft_iszerof(t_flags *flags, long long int num);
-
 long long int		ft_manage_mods(va_list *args, t_flags *flags);
-
 unsigned long long	ft_manage_u_mods(va_list *args, t_flags *flags);
 
 char				*ft_manage_int_sign(t_flags *flags, char *str, \
@@ -63,7 +60,6 @@ char				*ft_manage_int_sign(t_flags *flags, char *str, \
 char				*ft_manage_int_zero(t_flags *flags, char *str);
 char				*ft_strjoin_f2(char *s1, char *s2);
 char				*ft_strjoin_f1(char *s1, char *s2);
-char				*ft_ull_base(unsigned long long ull, int base);
 char				*ft_itoa_signed(long long int n);
 char				*ft_itoa_uns(unsigned long long int num, t_flags *flags);
 char				*ft_str_tolower(char *str);

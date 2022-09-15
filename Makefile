@@ -20,7 +20,6 @@ SRCS =  ft_printf.c \
 		ft_itoa_unsigned.c \
 		ft_treat_uint.c \
 		ft_treat_oct.c \
-		ft_ull_base.c \
 		ft_treat_pointer.c \
 		ft_helpers.c \
 

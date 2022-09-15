@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:05:08 by egaliber          #+#    #+#             */
-/*   Updated: 2022/09/15 13:18:21 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 15:45:12 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 
-	typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	size_t			content_size;
