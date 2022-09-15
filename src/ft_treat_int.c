@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 15:05:57 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/15 12:29:10 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 13:43:03 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,11 @@ char	*ft_manage_int_wid(t_flags *flags, char *str, long long int num)
 	return (str);
 }
 
-char	*ft_manage_int_prec(t_flags *flags, char *str, long long int num)
+char	*ft_manage_int_prec(t_flags *flags, char *str, long long int num, int a)
 {
 	int		i;
 	char	*temp_str;
-	int		a;
 
-	a = 0;
 	i = flags->dot - ft_strlen(str);
 	if (flags->plus == 1 || flags->space == 1 || num < 0)
 		i++;
@@ -73,10 +71,12 @@ char	*ft_manage_int_prec(t_flags *flags, char *str, long long int num)
 char	*ft_manage_int_str(t_flags *flags, char *str, long long int num)
 {
 	int		len;
+	int		a;
 
+	a = 0;
 	len = ft_strlen(str);
 	if (flags->dot >= len)
-		str = ft_manage_int_prec(flags, str, num);
+		str = ft_manage_int_prec(flags, str, num, a);
 	else if (flags->plus == 1 && flags->zero == 0 && num >= 0)
 		str = ft_manage_int_sign(flags, str, num);
 	else if (flags->space == 1 && flags->zero == 0 && num >= 0)
