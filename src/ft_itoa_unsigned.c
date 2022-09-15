@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_unsigned.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+        */
+/*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 18:15:05 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/13 13:39:45 by elliotgalib      ###   ########.fr       */
+/*   Updated: 2022/09/15 12:42:29 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@ unsigned int base, t_flags *flags)
 {
 	char	*num_alph;
 	int		i;
-	
+
 	i = 0;
 	if (flags->type == 'X')
 		num_alph = "0123456789ABCDEF";
 	else
 		num_alph = "0123456789abcdef";
-
 	while (num >= base)
 	{
 		i = num % base;
@@ -48,11 +47,12 @@ int	ft_len_uns(unsigned long long int n, unsigned int base)
 	return (len);
 }
 
-char	*ft_itoa_uns(unsigned long long int num, unsigned int base, t_flags *flags)
+char	*ft_itoa_uns(unsigned long long int num, unsigned int base, \
+t_flags *flags)
 {
 	char	*str;
 	int		len;
-	
+
 	if (base < 2 || base > 16)
 		return (NULL);
 	len = ft_len_uns(num, base);
@@ -63,4 +63,3 @@ char	*ft_itoa_uns(unsigned long long int num, unsigned int base, t_flags *flags)
 	str = ft_uns_base(str, num, len, base, flags);
 	return (str);
 }
-

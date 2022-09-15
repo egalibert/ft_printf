@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+        */
+/*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 14:44:48 by egaliber          #+#    #+#             */
-/*   Updated: 2021/12/03 14:43:22 by elliotgalib      ###   ########.fr       */
+/*   Updated: 2022/09/15 12:57:52 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 	int		j;
 	char	*str;
 
-	str = (char*)s1;
+	str = (char *) s1;
 	i = 0;
 	if (str && s2)
 	{

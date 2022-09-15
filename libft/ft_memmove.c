@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:47:16 by egaliber          #+#    #+#             */
-/*   Updated: 2021/11/22 12:59:50 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 12:59:13 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-	size_t	o;
+	size_t			i;
+	size_t			o;
 	unsigned char	*tmp_dst;
 	unsigned char	*tmp_src;
 

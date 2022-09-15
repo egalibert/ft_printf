@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+        */
+/*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:07:28 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/14 21:58:18 by elliotgalib      ###   ########.fr       */
+/*   Updated: 2022/09/15 13:16:51 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef FT_PRINTF_H
+#ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
 # include "../libft/libft.h"
 # include <stdarg.h>
 
-typedef	struct		s_flags
+typedef struct s_flags
 {
 	int				already_print;
 	int				type;
@@ -33,8 +33,8 @@ typedef	struct		s_flags
 }					t_flags;
 
 int					ft_printf(const char *str, ...);
-int					ft_is_in_type_list(int c);
-int					ft_is_in_flags_list(int c);
+int					form_spec(int c);
+int					is_flag(int c);
 int					ft_treatment(va_list *args, t_flags *flags);
 int					ft_treat_width(int width, int minus, int has_zero);
 int					ft_putstrprec(char *str, int prec);
@@ -45,25 +45,31 @@ int					ft_treat_percent(t_flags *flags);
 int					ft_treat_oct(va_list *args, t_flags *flags);
 int					ft_treat_hex(va_list *args, t_flags *flags);
 int					ft_treat_uns_int(va_list *args, t_flags *flags);
-int					ft_flag_dot(const char *save, int start, t_flags *flags, va_list args);
+int					ft_flag_dot(const char *save, int start, t_flags *flags, \
+								va_list args);
 int					ft_putchar2(int c);
 int					ft_treat_pointer(va_list *args, t_flags *flags);
-int     			ft_check_mods(int c);
+int					ft_check_mods(int c);
 int					ft_strlen2(const char *str);
 int					ft_iszerof(t_flags *flags, long long int num);
-long long int		ft_manage_mods(va_list *args, t_flags *flags);
-unsigned long long int	ft_manage_u_mods(va_list *args, t_flags *flags);
 
-char				*ft_manage_int_sign(t_flags *flags, char *str, long long int num);
-char				*ft_manage_int_zero(t_flags *flags,char *str);
-char 				*ft_strjoin_f2(char *s1, char *s2);
-char 				*ft_strjoin_f1(char *s1, char *s2);
+long long int		ft_manage_mods(va_list *args, t_flags *flags);
+
+unsigned long long	ft_manage_u_mods(va_list *args, t_flags *flags);
+
+char				*ft_manage_int_sign(t_flags *flags, char *str, \
+										long long int num);
+char				*ft_manage_int_zero(t_flags *flags, char *str);
+char				*ft_strjoin_f2(char *s1, char *s2);
+char				*ft_strjoin_f1(char *s1, char *s2);
 char				*ft_ull_base(unsigned long long ull, int base);
 char				*ft_itoa_signed(long long int n);
-char				*ft_itoa_uns(unsigned long long int num, unsigned int base, t_flags *flags);
+char				*ft_itoa_uns(unsigned long long int num, \
+								unsigned int base, t_flags *flags);
 char				*ft_str_tolower(char *str);
 char				ft_char_sign(t_flags *flags, char sign);
-char				*ft_add_hash(t_flags *flags, char *str, unsigned long long num);
+char				*ft_add_hash(t_flags *flags, char *str, \
+								unsigned long long num);
 
 void				ft_flag_parse(char *str, t_flags *flags);
 void				ft_init_flags(t_flags *flags);

@@ -6,13 +6,13 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 12:16:25 by egaliber          #+#    #+#             */
-/*   Updated: 2021/11/22 11:43:51 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 12:59:01 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 	{

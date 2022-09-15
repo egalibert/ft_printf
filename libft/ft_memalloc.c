@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 10:46:55 by egaliber          #+#    #+#             */
-/*   Updated: 2021/11/22 10:55:50 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 13:00:10 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void *tmp;
+	char	*tmp;
+	char	*p;
 
-	if (!(tmp = malloc(size)))
-		return(NULL);
-	ft_bzero(tmp, size);
-	return(tmp);
+	tmp = (char *)malloc(size);
+	if (tmp == NULL)
+		return (NULL);
+	p = tmp;
+	while (size--)
+		*p++ = 0;
+	return (tmp);
 }

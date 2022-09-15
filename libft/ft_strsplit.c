@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+        */
+/*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 11:00:30 by egaliber          #+#    #+#             */
-/*   Updated: 2021/11/30 14:57:39 by elliotgalib      ###   ########.fr       */
+/*   Updated: 2022/09/15 12:46:19 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 #include "libft.h"
 
@@ -67,12 +69,11 @@ char	**ft_strsplit(char const *s, char c)
 		m = ft_len_word(s, c);
 		arrstr[i] = ft_strnew(m);
 		if (arrstr == NULL)
-		{
 			return (NULL);
-		}
 		arrstr[i] = ft_strncpy(arrstr[i], s, m);
 		s += m;
 		i++;
 	}
 	return (arrstr);
+}
 }

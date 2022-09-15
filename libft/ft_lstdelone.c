@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+        */
+/*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:00:51 by elliotgalib       #+#    #+#             */
-/*   Updated: 2021/12/03 14:48:58 by elliotgalib      ###   ########.fr       */
+/*   Updated: 2022/09/15 13:01:04 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

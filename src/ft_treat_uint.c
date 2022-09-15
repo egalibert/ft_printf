@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_treat_uint.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+        */
+/*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 19:53:18 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/12 17:06:52 by elliotgalib      ###   ########.fr       */
+/*   Updated: 2022/09/15 13:17:14 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_manage_u_wid(t_flags *flags, char *str)
 {
-	int len;
-	char *temp_str;
-	int a;
-	
+	int		len;
+	char	*temp_str;
+	int		a;
+
 	a = 0;
 	len = flags->width - ft_strlen(str);
 	temp_str = ft_strnew(len);
@@ -38,10 +38,10 @@ char	*ft_manage_u_wid(t_flags *flags, char *str)
 
 char	*ft_manage_u_pre(t_flags *flags, char *str)
 {
-	int i;
-	int a;
-	char *temp_str;
-	
+	int		i;
+	int		a;
+	char	*temp_str;
+
 	a = 0;
 	i = flags->dot - ft_strlen(str);
 	temp_str = ft_strnew(i);
@@ -52,10 +52,11 @@ char	*ft_manage_u_pre(t_flags *flags, char *str)
 	return (str);
 }
 
-char *ft_manage_uns_str(t_flags *flags, char *str, unsigned long long int num)
+char	*ft_manage_uns_str(t_flags *flags, char *str, \
+		unsigned long long int num)
 {
-	int len;
-	
+	int	len;
+
 	len = ft_strlen(str);
 	if (flags->dot > len)
 		str = ft_manage_u_pre(flags, str);
@@ -67,11 +68,10 @@ char *ft_manage_uns_str(t_flags *flags, char *str, unsigned long long int num)
 	len = ft_strlen(str);
 	if (flags->width >= len)
 		str = ft_manage_u_wid(flags, str);
-
 	return (str);
 }
 
-unsigned long long int	ft_manage_u_mods(va_list *args, t_flags *flags)
+unsigned long long	ft_manage_u_mods(va_list *args, t_flags *flags)
 {
 	if (flags->mods == 4)
 		return ((unsigned char)va_arg(*args, unsigned int));
@@ -85,12 +85,12 @@ unsigned long long int	ft_manage_u_mods(va_list *args, t_flags *flags)
 		return ((unsigned int)va_arg(*args, unsigned int));
 }
 
-int		ft_treat_uns_int(va_list *args, t_flags *flags)
+int	ft_treat_uns_int(va_list *args, t_flags *flags)
 {
-	char						*str;
-	unsigned long long int	  number;
-	int		  			char_count;				
-	
+	char					*str;
+	unsigned long long int	number;
+	int						char_count;
+
 	char_count = 0;
 	number = ft_manage_u_mods(args, flags);
 	str = ft_itoa_uns(number, 10, flags);

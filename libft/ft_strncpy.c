@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:18:09 by egaliber          #+#    #+#             */
-/*   Updated: 2021/11/11 11:58:04 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 12:58:34 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 
 	a = 0;
 	while (src[a] != '\0' && a < n)
-		{
-			dst[a] = src[a];
-			a++;
-		}
+	{
+		dst[a] = src[a];
+		a++;
+	}
 	while (a < n)
 	{
 		dst[a] = '\0';

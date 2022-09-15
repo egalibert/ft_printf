@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 10:37:55 by egaliber          #+#    #+#             */
-/*   Updated: 2021/11/22 10:38:48 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 12:50:42 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char	*fresh;
-	size_t	i;
+	int		i;
+	char	*res;
 
 	if (!s || !f)
 		return (NULL);
-	if (!(fresh = ft_strnew(ft_strlen(s))))
+	res = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (!res)
 		return (NULL);
 	i = 0;
 	while (s[i])
 	{
-		fresh[i] = f(s[i]);
+		res[i] = f(s[i]);
 		i++;
 	}
-	fresh[i] = '\0';
-	return (fresh);
+	res[i] = '\0';
+	return (res);
 }

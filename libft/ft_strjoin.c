@@ -6,16 +6,16 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 10:40:31 by egaliber          #+#    #+#             */
-/*   Updated: 2021/11/22 12:43:25 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 12:48:46 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *ptr;
-	char *str;
+	char	*ptr;
+	char	*str;
 
 	if (!s1 || !s2)
 		return (NULL);

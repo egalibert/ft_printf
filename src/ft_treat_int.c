@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_treat_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+        */
+/*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 15:05:57 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/08 20:21:10 by elliotgalib      ###   ########.fr       */
+/*   Updated: 2022/09/15 12:29:10 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_manage_int_wid(t_flags *flags, char *str, long long int num)
 {
-	int len;
-	char *temp_str;
-	int a;
-	
+	int		len;
+	char	*temp_str;
+	int		a;
+
 	a = 0;
 	len = flags->width - ft_strlen(str);
 	if (ft_iszerof(flags, num))
@@ -40,16 +40,15 @@ char	*ft_manage_int_wid(t_flags *flags, char *str, long long int num)
 	return (str);
 }
 
-
 char	*ft_manage_int_prec(t_flags *flags, char *str, long long int num)
 {
-	int i;
-	char *temp_str;
-	int a;
-	
+	int		i;
+	char	*temp_str;
+	int		a;
+
 	a = 0;
 	i = flags->dot - ft_strlen(str);
-	if (flags->plus == 1 || flags->space == 1 || num < 0 )
+	if (flags->plus == 1 || flags->space == 1 || num < 0)
 		i++;
 	temp_str = ft_strnew(i);
 	if (num < 0)
@@ -71,10 +70,10 @@ char	*ft_manage_int_prec(t_flags *flags, char *str, long long int num)
 	return (str);
 }
 
-char *ft_manage_int_str(t_flags *flags, char *str, long long int num)
+char	*ft_manage_int_str(t_flags *flags, char *str, long long int num)
 {
-	int len;
-	
+	int		len;
+
 	len = ft_strlen(str);
 	if (flags->dot >= len)
 		str = ft_manage_int_prec(flags, str, num);
@@ -91,7 +90,6 @@ char *ft_manage_int_str(t_flags *flags, char *str, long long int num)
 		str = ft_manage_int_wid(flags, str, num);
 	else if (ft_iszerof(flags, num) && flags->over == 0)
 		str = ft_manage_int_sign(flags, str, num);
-
 	return (str);
 }
 
@@ -109,11 +107,11 @@ long long int	ft_manage_mods(va_list *args, t_flags *flags)
 		return ((int)va_arg(*args, int));
 }
 
-int		ft_treat_int(va_list *args, t_flags *flags)
+int	ft_treat_int(va_list *args, t_flags *flags)
 {
-	char				*str;
-	long long int	  number;
-	int			  char_count;
+	char			*str;
+	long long int	number;
+	int				char_count;
 
 	char_count = 0;
 	if (flags->dot != -1)

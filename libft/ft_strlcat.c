@@ -6,13 +6,13 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:18:48 by egaliber          #+#    #+#             */
-/*   Updated: 2021/11/29 11:27:31 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 12:49:00 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t		i;
 	size_t		t1;
