@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:07:28 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/15 13:16:51 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 14:08:55 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_flags
 	int				mods;
 	int				over;
 	int				min_over;
+	unsigned int	base;
 }					t_flags;
 
 int					ft_printf(const char *str, ...);
@@ -64,8 +65,7 @@ char				*ft_strjoin_f2(char *s1, char *s2);
 char				*ft_strjoin_f1(char *s1, char *s2);
 char				*ft_ull_base(unsigned long long ull, int base);
 char				*ft_itoa_signed(long long int n);
-char				*ft_itoa_uns(unsigned long long int num, \
-								unsigned int base, t_flags *flags);
+char				*ft_itoa_uns(unsigned long long int num, t_flags *flags);
 char				*ft_str_tolower(char *str);
 char				ft_char_sign(t_flags *flags, char sign);
 char				*ft_add_hash(t_flags *flags, char *str, \
