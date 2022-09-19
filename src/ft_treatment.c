@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_treatment.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 23:41:53 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/15 13:09:02 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/15 22:05:16 by elliotgalib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int	ft_treatment(va_list *args, t_flags *flags)
 		return (ft_treat_hex(args, flags));
 	if (flags->type == 'p')
 		return (ft_treat_pointer(args, flags));
+	if (flags->type == 'f')
+		return (ft_treat_float(args, flags));
 	if (flags->type == '%')
 		return (ft_treat_percent(flags));
 	return (0);
