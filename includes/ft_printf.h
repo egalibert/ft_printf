@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:07:28 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/15 15:49:03 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/19 21:40:52 by elliotgalib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,12 @@ int					ft_treat_uns_int(va_list *args, t_flags *flags);
 int					ft_flag_dot(const char *save, int start, t_flags *flags, \
 								va_list args);
 int					ft_putchar2(int c);
+int					ft_power(int power, int base);
 int					ft_treat_pointer(va_list *args, t_flags *flags);
 int					ft_check_mods(int c);
 int					ft_strlen2(const char *str);
 int					ft_iszerof(t_flags *flags, long long int num);
+int					ft_treat_float(va_list *args, t_flags *flags);
 long long int		ft_manage_mods(va_list *args, t_flags *flags);
 unsigned long long	ft_manage_u_mods(va_list *args, t_flags *flags);
 
