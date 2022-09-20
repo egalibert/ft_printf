@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+        */
+/*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:07:28 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/19 21:40:52 by elliotgalib      ###   ########.fr       */
+/*   Updated: 2022/09/20 00:11:01 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int					ft_iszerof(t_flags *flags, long long int num);
 int					ft_treat_float(va_list *args, t_flags *flags);
 long long int		ft_manage_mods(va_list *args, t_flags *flags);
 unsigned long long	ft_manage_u_mods(va_list *args, t_flags *flags);
+long double			ft_manage_f_mods(va_list *args, t_flags *flags);
+long double			ft_rounder(long double num, t_flags *flags);
 
 char				*ft_manage_int_sign(t_flags *flags, char *str, \
 										long long int num);

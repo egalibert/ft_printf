@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:26:03 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/20 00:11:10 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/20 01:05:11 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ char	*ft_manage_f_str(t_flags *flags, char *str, long double number)
 		else if (flags->space == 1)
 			str = ft_strjoin_f2(" ", str);
 	}
+	if (flags->hash == 1 && flags->dot == 0)
+		str = ft_strjoin_f1(str, ".");
 	len = ft_strlen(str);
 	if (flags->width >= len)
 		str = ft_manage_f_wid(flags, str);

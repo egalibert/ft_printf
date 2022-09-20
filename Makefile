@@ -12,7 +12,7 @@ SRCS =  ft_printf.c \
 		ft_treat_string.c \
 		ft_treat_char.c \
 		ft_treat_flags.c \
-		ft_putstrprec.c \
+		ft_treat_float.c \
 		ft_treat_percent.c \
 		ft_treat_int.c \
 		ft_treat_hex.c \
