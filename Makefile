@@ -6,9 +6,9 @@ SRCSPATH = src/
 
 SRCS =  ft_printf.c \
 		ft_treatment.c \
-		ft_treat_width.c \
 		ft_tools.c \
 		ft_tools2.c \
+		ft_tools3.c \
 		ft_treat_string.c \
 		ft_treat_char.c \
 		ft_treat_flags.c \
