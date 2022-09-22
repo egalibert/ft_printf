@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:07:28 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/22 13:20:46 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:23:08 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ long double			ft_rounding(int i, long double num);
 char				*ft_manage_int_sign(t_flags *flags, char *str, \
 										long long int num);
 char				*ft_manage_int_zero(t_flags *flags, char *str);
-char				*ft_hex_hash_mod(t_flags *flags, char *str, unsigned long long num, int len2);
+char				*ft_hex_hash_mod(t_flags *flags, char *str, \
+					unsigned long long num, int len2);
 char				*ft_strjoin_f2(char *s1, char *s2);
 char				*ft_strjoin_f1(char *s1, char *s2);
 char				*ft_itoa_signed(long long int n);
