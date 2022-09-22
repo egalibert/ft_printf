@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_treatment.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+        */
+/*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 23:41:53 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/15 22:05:16 by elliotgalib      ###   ########.fr       */
+/*   Updated: 2022/09/21 13:50:10 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	form_spec(int c)
 int	is_flag(int c)
 {
 	if (c == '#' || c == '-' || c == '+' || c == '.' || c == ' '
-		|| ft_isdigit(c) || ft_check_mods(c))
+		|| c == '*' || ft_isdigit(c) || ft_check_mods(c))
 		return (1);
 	else
 		return (0);

@@ -6,14 +6,14 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:26:03 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/20 01:05:11 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:02:40 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 #include <stdio.h>
 
-char	*ft_manage_f_wid(t_flags *flags, char *str)
+char	*ft_manage_f_wid(t_flags *flags, char *str, int is_neg)
 {
 	int		len;
 	char	*temp_str;
@@ -22,9 +22,12 @@ char	*ft_manage_f_wid(t_flags *flags, char *str)
 	a = 0;
 	len = flags->width - ft_strlen(str);
 	temp_str = ft_strnew(len);
+	if (flags->plus == 1 || flags->space == 1 || is_neg == 1)
+		len--;
+	str = ft_add_minus(str, flags, is_neg);
 	while (len--)
 	{
-		if (flags->zero == 1 && flags->dot == -1 && flags->minus == 0)
+		if (flags->zero == 1 && flags->dot != -1 && flags->minus == 0)
 			temp_str[a++] = '0';
 		else
 			temp_str[a++] = ' ';
@@ -37,26 +40,27 @@ char	*ft_manage_f_wid(t_flags *flags, char *str)
 	return (str);
 }
 
-char	*ft_manage_f_str(t_flags *flags, char *str, long double number)
+char	*ft_manage_f_str(t_flags *flags, char *str, long double number, \
+		int is_neg)
 {
 	int	len;
 
-	if (number < 0)
+	len = ft_strlen(str);
+	if (flags->width > len)
+		str = ft_manage_f_wid(flags, str, is_neg);
+	if (is_neg == 1 && flags->min_over == 0)
 	{
 		str = ft_strjoin_f2("-", str);
 	}
-	else if (number >= 0 && (flags->plus == 1 || flags->space == 1))
+	if (number >= 0 && (flags->plus == 1 || flags->space == 1))
 	{
-		if (flags->plus == 1)
+		if (flags->plus == 1 && is_neg == 0)
 			str = ft_strjoin_f2("+", str);
-		else if (flags->space == 1)
+		else if (flags->space == 1 && is_neg == 0)
 			str = ft_strjoin_f2(" ", str);
 	}
 	if (flags->hash == 1 && flags->dot == 0)
 		str = ft_strjoin_f1(str, ".");
-	len = ft_strlen(str);
-	if (flags->width >= len)
-		str = ft_manage_f_wid(flags, str);
 	return (str);
 }
 
@@ -100,15 +104,19 @@ int	ft_treat_float(va_list *args, t_flags *flags)
 	char		*str;
 	long double	number;
 	int			char_count;
+	int			is_neg;
 
+	is_neg = 0;
 	str = NULL;
 	char_count = 0;
 	number = ft_manage_f_mods(args, flags);
 	if (flags->dot == -1)
 		flags->dot = 6;
+	if (number < 0)
+		is_neg = 1;
 	number = ft_rounder(number, flags);
 	str = ft_ftoa(number, str, flags->dot);
-	str = ft_manage_f_str(flags, str, number);
+	str = ft_manage_f_str(flags, str, number, is_neg);
 	ft_putstr(str);
 	char_count = ft_strlen(str);
 	free(str);

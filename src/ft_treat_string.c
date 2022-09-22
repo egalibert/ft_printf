@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 10:10:43 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/15 12:24:26 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/21 19:48:22 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,10 @@ int	ft_treat_string(va_list *args, t_flags *flags)
 	char	*str;
 	char	*print_str;
 
+	if (flags->star > 0)
+		ft_star(args, flags);
+	if (flags->dot < -1)
+		flags->dot *= -1;
 	str = va_arg(*args, char *);
 	if (!str)
 		print_str = ft_strdup("(null)");

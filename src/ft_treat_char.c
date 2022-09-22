@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:36:18 by egaliber          #+#    #+#             */
-/*   Updated: 2022/09/15 12:55:25 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/21 19:24:53 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	ft_treat_char(va_list *args, t_flags *flags)
 	char	c;
 
 	char_count = 0;
+	if (flags->star > 0)
+		ft_star(args, flags);
 	c = va_arg(*args, int);
 	if (flags->minus == 1 || flags->width > 1)
 		char_count = check_width(flags, c);

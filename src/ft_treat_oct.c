@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 20:24:20 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/15 14:03:36 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/21 19:25:36 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ int	ft_treat_oct(va_list *args, t_flags *flags)
 	int							char_count;
 
 	char_count = 0;
+	if (flags->star > 0)
+		ft_star(args, flags);
 	number = ft_manage_u_mods(args, flags);
 	flags->base = 8;
 	str = ft_itoa_uns(number, flags);

@@ -6,11 +6,12 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 19:09:39 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/20 00:12:24 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 03:08:19 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include <stdio.h>
 
 char	*ft_add_hash(t_flags *flags, char *str, unsigned long long num)
 {
@@ -25,12 +26,12 @@ char	*ft_add_hash(t_flags *flags, char *str, unsigned long long num)
 	return (str);
 }
 
-int	ft_power(int power, int base)
+long double	ft_power(int power, long double base)
 {
 	int	i;
 	int	number;
 
-	number = 1;
+	number = 1.0;
 	i = 0;
 	while (i < power)
 	{
@@ -51,26 +52,44 @@ long double	ft_manage_f_mods(va_list *args, t_flags *flags)
 long double	ft_rounder(long double num, t_flags *flags)
 {
 	long double	temp;
-	int			is_neg;
 
-	is_neg = 0;
-	temp = num;
 	if (num < 0)
 	{
 		num *= -1;
-		is_neg = 1;
 	}
-	temp = num * ft_power(flags->dot, 10);
+	temp = num * ft_power(flags->dot, 10.0);
 	if (temp - (long long)temp == 0.5)
 	{
-		if ((long long)temp % 2 == 0)
-			num = temp / ft_power(flags->dot, 10);
+		if ((long long)temp % 2 != 1 && (long long)temp != 0)
+			num = temp / ft_power(flags->dot, 10.0);
 		else
-			num = (temp + 0.5) / ft_power(flags->dot, 10);
+			num = ft_rounding(flags->dot, num);
 	}
 	else
-		num = (temp + 0.5) / ft_power(flags->dot, 10);
-	if (is_neg == 1)
-		num *= -1;
+		num = ft_rounding(flags->dot, num);
 	return (num);
+}
+
+char	*ft_hex_hash_mod(t_flags *flags, char *str, \
+		unsigned long long num, int len2)
+{
+	if (flags->hash == 1 && flags->dot == -1 && num > 0)
+	{
+		if (ft_strlen(str) - len2 >= 2 && flags->minus == 0)
+		{
+			str[0] = '0';
+			if (flags->type == 'x')
+				str[1] = 'x';
+			if (flags->type == 'X')
+				str[1] = 'X';
+		}
+		else
+		{
+			if (flags->type == 'x')
+				str = ft_strjoin_f2("0x", str);
+			if (flags->type == 'X')
+				str = ft_strjoin_f2("0X", str);
+		}
+	}
+	return (str);
 }

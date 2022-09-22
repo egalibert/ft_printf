@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 01:21:58 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/15 13:57:22 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/21 14:40:44 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_init_flags(t_flags *flags)
 	flags->over = 0;
 	flags->min_over = 0;
 	flags->base = 10;
+	flags->star = 0;
 }
 
 int	ft_treat_save(const char *save, va_list *args, t_flags *flags)

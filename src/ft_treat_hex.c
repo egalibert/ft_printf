@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 20:24:20 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/15 13:58:25 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/21 19:25:24 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,13 @@ char	*hex_hash(t_flags *flags, char *str, unsigned long long num, int len2)
 		&& flags->minus == 0 && num > 0 && flags->hash == 1)
 	{
 		str[0] = '0';
-		str[1] = 'x';
+		if (flags->type == 'x')
+			str[1] = 'x';
+		if (flags->type == 'X')
+			str[1] = 'X';
 		flags->hash = 0;
 	}
-	if (flags->hash == 1 && flags->dot == -1 && num > 0)
-	{
-		if (ft_strlen(str) - len2 >= 2 && flags->minus == 0)
-		{
-			str[0] = '0';
-			str[1] = 'x';
-		}
-		else
-			str = ft_strjoin_f2("0x", str);
-	}
+	str = ft_hex_hash_mod(flags, str, num, len2);
 	return (str);
 }
 
@@ -98,7 +92,7 @@ char	*ft_manage_hex_str(t_flags *flags, char *str, \
 	{
 		if (flags->type == 'x')
 			str = ft_strjoin_f2("0x", str);
-		else
+		if (flags->type == 'X')
 			str = ft_strjoin_f2("0X", str);
 		flags->hash = 0;
 	}
@@ -118,6 +112,8 @@ int	ft_treat_hex(va_list *args, t_flags *flags)
 	char_count = 0;
 	if (flags->minus == 1)
 		flags->zero = 0;
+	if (flags->star > 0)
+		ft_star(args, flags);
 	number = ft_manage_u_mods(args, flags);
 	flags->base = 16;
 	str = ft_itoa_uns(number, flags);

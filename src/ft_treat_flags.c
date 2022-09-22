@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 23:23:02 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/15 15:43:47 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 01:22:00 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ void	ft_reset_flags(t_flags *flags)
 	flags->mods = 0;
 	flags->over = 0;
 	flags->min_over = 0;
+	flags->star = 0;
 }
 
 void	ft_flag_parse(char *str, t_flags *flags)
@@ -107,7 +108,7 @@ void	ft_flag_parse(char *str, t_flags *flags)
 	i = 0;
 	ft_reset_flags(flags);
 	while (str[i] == '-' || str[i] == '+' || str[i] == '#' || str[i] == ' '
-		|| str[i] == '0')
+		|| str[i] == '0' || str[i] == '*' || str[i] == '.')
 	{
 		if (str[i] == '-')
 			flags->minus = 1;
@@ -119,6 +120,8 @@ void	ft_flag_parse(char *str, t_flags *flags)
 			flags->space = 1;
 		if (str[i] == '0')
 			flags->zero = 1;
+		if (str[i] == '*')
+			flags->star++;
 		i++;
 	}
 	ft_parse_width(str, flags);
