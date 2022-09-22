@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 23:23:02 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/22 01:22:00 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 15:22:52 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ void	ft_parse_precision(char *str, t_flags *flags)
 		flags->dot = ft_atoi(num_str);
 	}
 	ft_strdel(&num_str);
+	if (str[i] == '*' && flags->width == 0)
+	{
+		flags->star = 1;
+		i++;
+	}
 	if (ft_check_mods(str[i]))
 		ft_parse_mods(str, flags);
 }

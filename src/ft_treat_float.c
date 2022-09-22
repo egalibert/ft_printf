@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:26:03 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/22 13:24:13 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:58:53 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,9 @@ int	ft_treat_float(va_list *args, t_flags *flags)
 	number = ft_manage_f_mods(args, flags);
 	if (flags->dot == -1)
 		flags->dot = 6;
-	if (number < 0)
+	if (1 / number > 0)
+		is_neg = 0;
+	else
 		is_neg = 1;
 	number = ft_rounder(number, flags);
 	str = ft_ftoa(number, str, flags->dot);
