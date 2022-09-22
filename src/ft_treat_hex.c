@@ -6,12 +6,11 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 20:24:20 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/21 19:25:24 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:24:19 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-#include <stdio.h>
 
 char	*hex_hash(t_flags *flags, char *str, unsigned long long num, int len2)
 {

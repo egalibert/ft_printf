@@ -6,12 +6,11 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 00:08:44 by egaliber          #+#    #+#             */
-/*   Updated: 2022/09/22 13:03:02 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:24:03 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-#include <stdio.h>
 
 long double	ft_rounding(int i, long double num)
 {

@@ -6,12 +6,11 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:26:03 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/22 13:02:40 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:24:13 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-#include <stdio.h>
 
 char	*ft_manage_f_wid(t_flags *flags, char *str, int is_neg)
 {

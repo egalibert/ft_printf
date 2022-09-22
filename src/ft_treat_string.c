@@ -6,12 +6,11 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 10:10:43 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/21 19:48:22 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:24:35 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-#include <stdio.h>
 
 int	ft_strlen2(const char *str)
 {

@@ -6,12 +6,11 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 15:05:57 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/21 19:19:43 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:24:25 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-#include <stdio.h>
 
 char	*ft_manage_int_wid(t_flags *flags, char *str, long long int num)
 {
