@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:07:28 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/22 13:03:35 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:20:46 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,5 @@ char				*ft_add_minus(char *str, t_flags *flags, int is_neg);
 void				ft_flag_parse(char *str, t_flags *flags);
 void				ft_init_flags(t_flags *flags);
 void				ft_star(va_list *args, t_flags *flags);
-
-/*t_flags				ft_flag_minus(t_flags flags);
-t_flags				ft_flag_width(va_list *args, t_flags flags);
-t_flags				ft_flag_digit(char c, t_flags flags);
-t_flags				ft_flag_plus(t_flags flags);
-t_flags				ft_flag_hash(t_flags flags);
-*/
 
 #endif
