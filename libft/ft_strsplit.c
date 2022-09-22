@@ -6,11 +6,9 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 11:00:30 by egaliber          #+#    #+#             */
-/*   Updated: 2022/09/15 12:46:19 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:19:50 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 #include "libft.h"
 
@@ -75,5 +73,4 @@ char	**ft_strsplit(char const *s, char c)
 		i++;
 	}
 	return (arrstr);
-}
 }
