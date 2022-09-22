@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 15:05:57 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/22 13:24:25 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 16:20:14 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ int	ft_treat_int(va_list *args, t_flags *flags)
 	int				char_count;
 
 	char_count = 0;
-	if (flags->dot != -1)
+	if (flags->dot != -1 && flags->star == 0)
 		flags->zero = 0;
 	if (flags->star > 0)
 		ft_star(args, flags);

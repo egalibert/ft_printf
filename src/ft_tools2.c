@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 19:09:39 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/22 13:23:58 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 16:32:15 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ long double	ft_rounder(long double num, t_flags *flags)
 	temp = num * ft_power(flags->dot, 10.0);
 	if (temp - (long long)temp == 0.5)
 	{
-		if ((long long)temp % 2 != 1)
+		if ((long long)temp % 2 != 1 )
 			num = temp / ft_power(flags->dot, 10.0);
 		else
 			num = ft_rounding(flags->dot, num);

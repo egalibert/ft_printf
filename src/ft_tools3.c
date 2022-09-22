@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 00:08:44 by egaliber          #+#    #+#             */
-/*   Updated: 2022/09/22 14:32:23 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 16:21:09 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,27 @@ long double	ft_rounding(int i, long double num)
 
 void	ft_star(va_list *args, t_flags *flags)
 	{
-	if (flags->star == 1 && flags->dot == -1)
+	int i;
+
+	i = flags->width;
+	if (flags->star == 1)
 		flags->width = va_arg(*args, long long);
-	if (flags->star == 1 && flags->dot == 0)
-		flags->dot = va_arg(*args, long long);
 	if (flags->star == 2)
+		flags->dot = va_arg(*args, long long);
+	if (flags->star == 3)
 	{
 		flags->width = va_arg(*args, long long);
 		flags->dot = va_arg(*args, long long);
 	}
+	if (i != 0)
+		flags->width = i;
 	if (flags->width < 0)
 	{
 		flags->minus = 1;
 		flags->width *= -1;
 	}
 	if (flags->dot < 0)
-		flags->dot *= -1;
+		flags->dot = -1;
 }
 
 char	*ft_add_minus(char *str, t_flags *flags, int is_neg)

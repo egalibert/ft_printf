@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 23:23:02 by elliotgalib       #+#    #+#             */
-/*   Updated: 2022/09/22 15:22:52 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 16:11:08 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,14 @@ void	ft_parse_precision(char *str, t_flags *flags)
 	while (str[i] != '.')
 		i++;
 	i++;
+	if (str[i] == '*')
+	{
+		if (flags->star == 1)
+			flags->star = 3;
+		else
+			flags->star = 2;
+		i++;
+	}
 	if (ft_isdigit(str[i]))
 	{
 		while (ft_isdigit(str[i]))
@@ -55,11 +63,6 @@ void	ft_parse_precision(char *str, t_flags *flags)
 		flags->dot = ft_atoi(num_str);
 	}
 	ft_strdel(&num_str);
-	if (str[i] == '*' && flags->width == 0)
-	{
-		flags->star = 1;
-		i++;
-	}
 	if (ft_check_mods(str[i]))
 		ft_parse_mods(str, flags);
 }
@@ -76,6 +79,11 @@ void	ft_parse_width(char *str, t_flags *flags)
 	while (str[i] == '-' || str[i] == '+' || str[i] == '#' || str[i] == ' '
 		|| str[i] == '0')
 		i++;
+	if (str[i] == '*')
+	{
+		flags->star = 1;
+		i++;
+	}
 	if (ft_isdigit(str[i]))
 	{
 		while (ft_isdigit(str[i]))
@@ -113,7 +121,7 @@ void	ft_flag_parse(char *str, t_flags *flags)
 	i = 0;
 	ft_reset_flags(flags);
 	while (str[i] == '-' || str[i] == '+' || str[i] == '#' || str[i] == ' '
-		|| str[i] == '0' || str[i] == '*' || str[i] == '.')
+		|| str[i] == '0')
 	{
 		if (str[i] == '-')
 			flags->minus = 1;
@@ -125,8 +133,6 @@ void	ft_flag_parse(char *str, t_flags *flags)
 			flags->space = 1;
 		if (str[i] == '0')
 			flags->zero = 1;
-		if (str[i] == '*')
-			flags->star++;
 		i++;
 	}
 	ft_parse_width(str, flags);
