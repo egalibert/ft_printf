@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 00:08:44 by egaliber          #+#    #+#             */
-/*   Updated: 2022/09/22 17:27:12 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/22 17:29:28 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,5 @@ void	ft_manage_star(t_flags *flags)
 	if (flags->star == 1)
 		flags->star = 3;
 	else
-		lags->star = 2;
+		flags->star = 2;
 }
