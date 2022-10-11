@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+        */
+/*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 14:32:41 by elliotgalib       #+#    #+#             */
-/*   Updated: 2021/11/30 14:33:20 by elliotgalib      ###   ########.fr       */
+/*   Updated: 2021/12/13 14:43:04 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 10:53:49 by egaliber          #+#    #+#             */
-/*   Updated: 2021/11/29 11:31:57 by egaliber         ###   ########.fr       */
+/*   Updated: 2021/12/18 13:58:46 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_get_end(const char *s)
 	int	i;
 
 	i = ft_strlen(s) - 1;
-	while (i > 0)
+	while (i >= 0)
 	{
 		if (s[i] != ' ' && s[i] != '\t' && s[i] != '\n')
 			return (i);

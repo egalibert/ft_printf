@@ -3,25 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+        */
+/*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 14:59:35 by elliotgalib       #+#    #+#             */
-/*   Updated: 2021/12/03 14:48:43 by elliotgalib      ###   ########.fr       */
+/*   Updated: 2021/12/13 15:06:11 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	recurse_me(t_list **alst, void (*del)(void *))
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	if ((*alst)->next)
-		recurse_me(&((*alst)->next), del);
-	lstdelone(alst, del);
-}
-
-void	lstdel(t_list **alst, void (*del)(void *))
-{
-	if (*alst == NULL)
-		return ;
-	recurse_me(alst, del);
+	if (*alst != NULL && del != NULL)
+	{
+		ft_lstdel(&((*alst)->next), del);
+		ft_lstdelone(alst, del);
+	}
 }

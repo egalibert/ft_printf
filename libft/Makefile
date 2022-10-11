@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: elliotgalibert <elliotgalibert@student.    +#+  +:+       +#+         #
+#    By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/03 14:11:33 by elliotgalib       #+#    #+#              #
-#    Updated: 2022/08/10 14:56:46 by elliotgalib      ###   ########.fr        #
+#    Updated: 2022/10/04 00:17:53 by egaliber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,17 @@ SRC = 	ft_atoi.c \
 		ft_lstadd.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
-		ft_lst_addback.c
+		ft_lst_addback_extra.c \
+		ft_strjoin_f1.c \
+		ft_strjoin_f2.c \
+		ft_rounding.c \
+		ft_power.c \
+		ft_itoa_signed.c \
+		ft_lstat_extra.c \
+		ft_lstlast_extra.c \
+		ft_power_to_extra.c \
+		ft_lstsize_extra.c \
+		get_next_line.c \
 		
 OBJ = $(SRC:.c=.o)
 

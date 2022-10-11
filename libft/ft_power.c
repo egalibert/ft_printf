@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 10:55:31 by egaliber          #+#    #+#             */
-/*   Updated: 2022/09/24 14:23:05 by egaliber         ###   ########.fr       */
+/*   Created: 2022/09/24 14:31:25 by egaliber          #+#    #+#             */
+/*   Updated: 2022/09/24 14:31:35 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+long double	ft_power(int power, long double base)
 {
-	char	*t;
+	int	i;
+	int	number;
 
-	t = (char *)malloc(sizeof(*t) * (size + 1));
-	if (!t)
-		return (NULL);
-	ft_memset(t, '\0', size + 1);
-	return (t);
+	number = 1.0;
+	i = 0;
+	while (i < power)
+	{
+		number *= base;
+		i++;
+	}
+	return (number);
 }

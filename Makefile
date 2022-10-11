@@ -33,7 +33,7 @@ LIBFT_FUNCTIONS = $(addprefix libft/, ft_atoi.o \
 		ft_isprint.o \
 		ft_itoa.o \
 		ft_lstadd.o \
-		ft_lst_addback.o \
+		ft_lst_addback_extra.o \
 		ft_lstdel.o \
 		ft_lstdelone.o \
 		ft_lstiter.o \

@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_rounding.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 10:55:31 by egaliber          #+#    #+#             */
-/*   Updated: 2022/09/24 14:23:05 by egaliber         ###   ########.fr       */
+/*   Created: 2022/09/24 14:33:15 by egaliber          #+#    #+#             */
+/*   Updated: 2022/09/24 14:33:24 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+long double	ft_rounding(int i, long double num)
 {
-	char	*t;
+	long double	round;
+	long double	r;
 
-	t = (char *)malloc(sizeof(*t) * (size + 1));
-	if (!t)
-		return (NULL);
-	ft_memset(t, '\0', size + 1);
-	return (t);
+	r = 0.5;
+	while (i > 0)
+	{
+		r = r / 10.0;
+		i--;
+	}
+	round = num + r;
+	return (round);
 }

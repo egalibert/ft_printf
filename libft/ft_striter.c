@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 10:24:34 by egaliber          #+#    #+#             */
-/*   Updated: 2021/11/16 11:06:59 by egaliber         ###   ########.fr       */
+/*   Updated: 2021/12/13 16:30:17 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,19 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	char	*ptr;
+	int	i;
+	int	y;
 
-	if (f == 0 || *f == 0)
-		return ;
-	ptr = s;
-	while (*ptr)
-		f(ptr++);
+	i = 0;
+	y = 0;
+	if (s != NULL && f != NULL)
+	{
+		i = ft_strlen(s);
+		while (y < i)
+		{
+			(*f)(s);
+			s++;
+			y++;
+		}
+	}
 }

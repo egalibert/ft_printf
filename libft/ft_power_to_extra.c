@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_power_to_extra.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 10:55:31 by egaliber          #+#    #+#             */
-/*   Updated: 2022/09/24 14:23:05 by egaliber         ###   ########.fr       */
+/*   Created: 2021/12/16 13:57:54 by egaliber          #+#    #+#             */
+/*   Updated: 2021/12/16 14:20:48 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strnew(size_t size)
+int	ft_power_to(int nb, int power)
 {
-	char	*t;
+	int		result;
 
-	t = (char *)malloc(sizeof(*t) * (size + 1));
-	if (!t)
-		return (NULL);
-	ft_memset(t, '\0', size + 1);
-	return (t);
+	if (nb < 0)
+		nb *= -1;
+	if (power == 0)
+		return (1);
+	if ((power < 0) || (nb == 0))
+		return (0);
+	result = 1;
+	while (power--)
+		result *= nb;
+	return (result);
 }

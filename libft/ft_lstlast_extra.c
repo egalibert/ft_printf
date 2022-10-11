@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast_extra.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 10:55:31 by egaliber          #+#    #+#             */
-/*   Updated: 2022/09/24 14:23:05 by egaliber         ###   ########.fr       */
+/*   Created: 2021/12/16 15:10:48 by egaliber          #+#    #+#             */
+/*   Updated: 2021/12/16 15:21:24 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*t;
-
-	t = (char *)malloc(sizeof(*t) * (size + 1));
-	if (!t)
-		return (NULL);
-	ft_memset(t, '\0', size + 1);
-	return (t);
+	while (lst != NULL && lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

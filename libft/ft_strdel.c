@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 10:55:08 by egaliber          #+#    #+#             */
-/*   Updated: 2022/09/15 12:58:47 by egaliber         ###   ########.fr       */
+/*   Updated: 2021/12/15 13:10:15 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_strdel(char **as)
 {
-	if (as)
+	if (as && *as)
 	{
 		free(*as);
 		*as = NULL;
